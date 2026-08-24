@@ -3,11 +3,13 @@ import os
 import requests
 import streamlit as st
 
+API_URL = os.getenv("API_URL")
 
-API_URL = os.getenv(
-    "API_URL",
-    "http://127.0.0.1:8000/predict"
-)
+if not API_URL:
+    try:
+        API_URL = st.secrets["API_URL"]
+    except KeyError:
+        API_URL = "http://127.0.0.1:8000/predict"
 
 st.set_page_config(
     page_title="Telco Churn Predictor",
