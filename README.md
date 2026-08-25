@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-Streamlit App: <YOUR STREAMLIT APP LINK>
+Streamlit App: https://telco-churn-prediction-system-uiig899jjhvq7orzebnbvr.streamlit.app/
 
 FastAPI API: https://telco-churn-prediction-system.onrender.com
 
