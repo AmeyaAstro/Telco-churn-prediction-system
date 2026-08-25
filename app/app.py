@@ -2,13 +2,15 @@ import os
 
 import requests
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
+
 
 API_URL = os.getenv("API_URL")
 
 if not API_URL:
     try:
         API_URL = st.secrets["API_URL"]
-    except KeyError:
+    except (StreamlitSecretNotFoundError, KeyError):
         API_URL = "http://127.0.0.1:8000/predict"
 
 st.set_page_config(
